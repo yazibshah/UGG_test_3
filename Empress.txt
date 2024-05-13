@@ -1,0 +1,66 @@
+Empress Token Smart Contract Documentation
+
+1. Introduction
+
+Empress Token is an ERC20-compliant token implemented on the Binance Smart Chain (BSC) testnet. 
+This documentation provides a detailed explanation of the smart contract's architecture, functions, usage, and verification status.
+
+2. Architecture
+The Empress Token smart contract is written in Solidity, the language for BSC smart contracts.
+It utilizes the OpenZeppelin library for ERC20 token implementation.
+
+3. Contract Overview
+
+Contract Address: 0xbAC2a3538Bbe089375d26b37116333F7096e0a82
+Contract Name: EmpressToken
+Token Symbol: EMP
+Token Name: Empress Token
+Decimal: 18
+
+
+4. Contract Functions
+4.1. Constructor
+
+Description: Initializes the contract owner and sets the initial token price.
+Parameters: initialTokenPrice: Initial price of 1 EMP token in BNB.
+4.2. receive()
+
+Description: Receives BNB sent to the contract without a specific function call. It mints EMP tokens based on the sent value and the current token price.
+Behavior: Calculates the amount of EMP tokens to mint based on the sent value and the current token price.
+Modifiers: External, Payable
+4.3. setTokenPrice(uint256 newPrice)
+
+Description: Allows the owner to update the token price.
+Parameters: newPrice: New price of 1 EMP token in BNB.
+Modifiers: External, OnlyOwner
+4.4. unwrap(uint256 amount)
+
+Description: Allows users to unwrap EMP tokens and receive BNB in exchange. The amount of BNB returned is calculated based on the token amount and the current token price.
+Parameters: amount: Amount of EMP tokens to unwrap.
+Modifiers: External
+
+
+5. Usage
+
+Deploying the Contract: Deploy the Empress Token smart contract to the Binance Smart Chain.
+Interacting with the Contract: Users can interact with the contract using BSC wallets or through programmatic interfaces.
+Wrap BNB: Users can send BNB to the contract address, and the contract will mint EMP tokens based on the value sent and the current token price.
+Unwrap EMP: Users can call the unwrap function to burn EMP tokens and receive BNB in exchange based on the current token price.
+Updating Token Price: Only the owner can update the token price using the setTokenPrice function.
+
+
+6. Security Considerations
+
+Ensure proper testing before deploying the contract to the Binance Smart Chain mainnet.
+Implement access control to restrict sensitive functions to authorized users.
+Use secure methods for handling BNB transfers and token minting.
+7. Verification
+
+The Empress Token smart contract has been verified on the Binance Smart Chain testnet. You can view the contract source code
+and other details on BSCScan.
+
+8. Conclusion
+
+The Empress Token smart contract provides a mechanism for wrapping BNB into EMP tokens and unwrapping EMP tokens back into BNB.
+It offers flexibility in managing token pricing and ensures secure token transactions on the Binance Smart Chain testnet.
+

@@ -1,0 +1,84 @@
+# DOLA Token Smart Contract
+
+# Overview
+The DOLA Token is an ERC20-compatible token deployed on the Binance Smart Chain (BSC).
+It allows users to mint DOLA tokens against two different collateral options: ROI tokens and BDOLA tokens. 
+The contract also supports burning DOLA tokens to redeem the equivalent amount of ROI tokens or BDOLA tokens based on the selected collateral.
+
+
+3. Contract Overview
+
+Contract Address: 0x3a336Ed56744Fff1C3006c1C7Dcca7E91eF51cC1
+Contract Name: DOLA
+Token Symbol: DOLA
+Token Name: DOLA
+Decimal: 18
+
+
+# Architecture
+The smart contract is implemented in Solidity and utilizes the OpenZeppelin library for ERC20 token functionality.
+It consists of the following key components:
+
+ERC20 Token Standard: The DOLA token contract implements the ERC20 standard, allowing it to be compatible with wallets, 
+exchanges, and other contracts that support ERC20 tokens.
+Minting Functions: Two minting functions (mintWithROI and mintWithBDOLA) allow users to mint DOLA tokens against ROI and 
+BDOLA collateral, respectively. The number of DOLA tokens minted is calculated based on predefined exchange rates.
+Burning Functions: Two burning functions (burnByROI and burnByBDola) allow users to burn DOLA tokens and redeem 
+the equivalent amount of ROI or BDOLA tokens based on the selected collateral.
+Exchange Rates: The contract defines exchange rates between DOLA tokens and ROI/BDOLA tokens. Currently, 
+10 ROI tokens are required to mint 1 DOLA token, and 5 BDOLA tokens are required to mint 1 DOLA token.
+
+# Functions
+Constructor: Initializes the contract with the addresses of ROI token and BDOLA token contracts.
+
+mintWithROI: Allows users to mint DOLA tokens against ROI collateral. Users must have sufficient ROI tokens to cover the minting amount. The function calculates the number of DOLA tokens to mint based on the ROI-to-DOLA exchange rate and transfers the required ROI tokens to the contract.
+
+mintWithBDOLA: Allows users to mint DOLA tokens against BDOLA collateral. Users must have sufficient BDOLA tokens to cover the minting amount. The function calculates the number of DOLA tokens to mint based on the BDOLA-to-DOLA exchange rate and transfers the required BDOLA tokens to the contract.
+
+burnByROI: Allows users to burn DOLA tokens and redeem the equivalent amount of ROI tokens. The function calculates the number of ROI tokens to return based on the DOLA tokens burned and transfers them to the user.
+
+burnByBDola: Allows users to burn DOLA tokens and redeem the equivalent amount of BDOLA tokens. The function calculates the number of BDOLA tokens to return based on the DOLA tokens burned and transfers them to the user.
+
+Usage
+Minting DOLA Tokens: Users can call either mintWithROI or mintWithBDOLA function, depending on the collateral they want to use. They need to provide the desired amount of collateral tokens to mint DOLA tokens.
+
+Burning DOLA Tokens: Users can call either burnByROI or burnByBDola function to burn DOLA tokens and redeem the equivalent amount of ROI or BDOLA tokens, respectively.
+
+# Conclusion
+The DOLA token smart contract provides a flexible mechanism for minting and burning DOLA tokens against ROI and BDOLA collateral. It ensures the stability of the DOLA token by pegging its value to the ROI and BDOLA tokens. Users can easily interact with the contract to mint or burn DOLA tokens based on their collateral preference.
+
+# ROI Token Smart Contract
+# Overview
+The ROI Token is an ERC20-compatible token deployed on the Binance Smart Chain (BSC). It serves as collateral for minting DOLA tokens in the DOLA token smart contract.
+
+# Architecture
+The smart contract implements the ERC20 standard using OpenZeppelin's ERC20 contract. It has a predefined initial supply of tokens that are minted to the contract deployer upon deployment.
+
+# Functions
+Constructor: Initializes the contract with the name, symbol, and initial supply of ROI tokens.
+
+mint: Allows the contract owner to mint additional ROI tokens. This function can only be called by the contract owner.
+
+# Conclusion
+The ROI token smart contract provides a basic implementation of an ERC20 token that serves as collateral for 
+minting DOLA tokens. It allows the contract owner to mint additional tokens as needed.
+
+# BDOLA Token Smart Contract
+# Overview
+The BDOLA Token is an ERC20-compatible token deployed on the Binance Smart Chain (BSC). 
+It serves as collateral for minting DOLA tokens in the DOLA token smart contract.
+
+# Architecture
+The smart contract implements the ERC20 standard using OpenZeppelin's ERC20 contract. 
+It has a predefined initial supply of tokens that are minted to the contract deployer upon deployment.
+
+Functions
+Constructor: Initializes the contract with the name, symbol, and initial supply of BDOLA tokens.
+
+mint: Allows the contract owner to mint additional BDOLA tokens. This function can only be called by the contract owner.
+
+# Conclusion
+The BDOLA token smart contract provides a basic implementation of an ERC20 token that serves as collateral for minting 
+DOLA tokens. It allows the contract owner to mint additional tokens as needed.
+
+
