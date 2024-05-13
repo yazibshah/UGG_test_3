@@ -34,7 +34,7 @@ Empress Token is an ERC20-compliant token implemented on the Ethereum blockchain
 ## Installation
 
 1. Clone the repository:
-https://github.com/yazibshah/UGG_test_3
+git clone git@github.com:yazibshah/UGG_test_3.git
 
 2. Install dependencies:
     npm i 
